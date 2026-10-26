@@ -7,7 +7,8 @@ resource "aws_vpc" "main" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes  = [tags]
+    ignore_changes  = true
+    tag = ["Name"]
   }
 
   tags = {
@@ -22,7 +23,8 @@ resource "aws_subnet" "subnet_a" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes  = [tags]
+    ignore_changes  = true
+    tag = ["Name"]
   }
 
   tags = {
@@ -37,7 +39,8 @@ resource "aws_subnet" "subnet_b" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes  = [tags]
+    ignore_changes  = true
+    tag = ["Name"]
   }
 
   tags = {
@@ -53,7 +56,8 @@ resource "aws_instance" "server_a" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes = [tags]
+    ignore_changes  = true
+    tag = ["Name"]
   }
 
   tags = {
@@ -68,7 +72,8 @@ resource "aws_instance" "server_b" {
 
   lifecycle {
     prevent_destroy = true
-    ignore_changes = [tags]
+    ignore_changes  = true
+    tag = ["Name"]
   }
 
   tags = {
